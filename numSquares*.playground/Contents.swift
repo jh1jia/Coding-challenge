@@ -13,6 +13,7 @@
 */
 
 func numSquares(n: Int) -> Int {
+    
     guard n > 0 else {
         return 0
     }
