@@ -51,3 +51,43 @@ func isValid(_ s: String) -> Bool {
     }
     return stack.isEmpty
 }
+
+
+/*
+class Solution {
+    
+    public struct Stack{
+        private var storage: [Character] = []
+        mutating func push(_ char: Character){
+            storage.append(char)
+        }
+        mutating func pop() -> Character? {
+            return storage.popLast()
+        }
+        func peek() -> Character? {
+            return storage.last
+        }
+        var isEmpty: Bool {
+            return peek() == nil
+        }
+    }
+    
+    func isValid(_ s: String) -> Bool {
+        var stack = Stack()
+        
+        for char in s{
+            if char == "(" {
+                stack.push(char)
+            } else if char == ")"{
+                if stack.isEmpty {
+                    return false
+                } else {
+                    stack.pop()
+                }
+            }
+        }
+        return stack.isEmpty
+    }
+    
+}
+*/
