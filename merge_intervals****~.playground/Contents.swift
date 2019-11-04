@@ -47,3 +47,37 @@ func merge(intervals: [Interval]) -> [Interval] {
     }
     return result
 }
+
+/*
+class Solution {
+    
+    func merge(_ intervals: [[Int]]) -> [[Int]] {
+        
+        var result = [[Int]]()
+        
+        let intervals = intervals.sorted {
+            if $0[0] != $1[0] {
+                return $0[0] < $1[0]
+            } else {
+                return $0[1] < $1[1]
+            }
+        }
+        
+        for interval in intervals {
+            
+            guard let last = result.popLast() else {
+                result.append(interval)
+                continue
+            }
+            
+            if last[1] < interval[0] {
+                result.append(last)
+                result.append(interval)
+            } else {
+                result.append([last[0], max(last[1], interval[1])])
+            }
+        }
+        return result
+    }
+}
+*/
